@@ -17,6 +17,19 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
         this.list = list;
     }
 
+    class MyViewHolder extends RecyclerView.ViewHolder{
+        View mView;
+        TextView name,status;
+        public MyViewHolder(View itemVew){
+            super(itemVew);
+            mView = itemVew;
+            name = mView.findViewById(R.id.tvName);
+            status = mView.findViewById(R.id.tvDescription);
+
+        }
+
+    }
+
     @NonNull
     @Override
     public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -35,14 +48,5 @@ public class AdapterClass extends RecyclerView.Adapter<AdapterClass.MyViewHolder
         return list.size();
     }
 
-    class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView name,status;
-        public MyViewHolder(View itemVew){
-            super(itemVew);
-            name = itemVew.findViewById(R.id.tvName);
-            status = itemVew.findViewById(R.id.tvDescription);
 
-        }
-
-    }
 }
